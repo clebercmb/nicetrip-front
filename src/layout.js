@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./view/Home";
 import { Demo } from "./view/Demo";
 import { Single } from "./view/Single";
+import HouseListView from "./view/HouseListView"
 
 //import injectContext from "./store/appContext";
 
@@ -52,6 +53,7 @@ export const Layout = () => {
 						<Route path="/single/:theid" component={Single} />
 						<Route path="/resources/:theid" component={Single} />
 						<Route path="/resources" component={Single} />
+						<Route path="/house" component={HouseListView} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
 
