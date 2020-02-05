@@ -6,26 +6,20 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
-<<<<<<< HEAD
+
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
     "popper": "^1.0.1",
-||||||| merged common ancestors
-=======
-    "bootstrap": "^4.4.1",
+
+
     "dotenv": "^8.2.0",
     "env-cmd": "^10.0.1",
     "fibers": "^4.0.2",
     "google-map-react": "^1.1.6",
     "google-maps-react": "^2.0.2",
-    "jquery": "^3.4.1",
+
     "node-sass": "^4.13.1",
-    "popper": "^1.0.1",
-<<<<<<< HEAD
-    "popper.js": "^1.16.1",
-=======
->>>>>>> 6228be1c0e22300b4a722c78afa03d98a25dd7f6
->>>>>>> 4bf261fd145f878a2e0771e358d2a16659b06e2b
+
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-google-maps": "^9.4.5",
