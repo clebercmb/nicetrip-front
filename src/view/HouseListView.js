@@ -8,7 +8,7 @@ const HouseListView = props => {
     return (
         <div className="container-fluid HouseListView">
             <div className="row">
-                <div className="col">
+                <div className="col-7">
                     <House
                         img = {"/img/houses/cleber_house1_img_1.webp"}
                         type = {"Private room"}
@@ -53,7 +53,7 @@ const HouseListView = props => {
                         price = {"$26 / nigth"}
                     />
                 </div>
-                <div className="col HouseListView-Map" >
+                <div className="col-5 HouseListView-Map" >
                     <MapContainer
                         styles= {{width:"400px", height: "400px", position: "fixed"}}
                     />
