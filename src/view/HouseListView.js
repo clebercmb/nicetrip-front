@@ -6,7 +6,7 @@ import "../styles/HouseListView.css"
 const HouseListView = props => { 
 
     return (
-        <div className="container">
+        <div className="container-fluid HouseListView">
             <div className="row">
                 <div className="col">
                     <House
@@ -55,7 +55,7 @@ const HouseListView = props => {
                 </div>
                 <div className="col HouseListView-Map" >
                     <MapContainer
-                        styles= {{width:"600px", height: "400px", position: "fixed"}}
+                        styles= {{width:"400px", height: "400px", position: "fixed"}}
                     />
                 </div>
             </div>

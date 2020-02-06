@@ -1,3 +1,7 @@
 .HouseListView-Map {
     position:sticky  !important
 }
+
+.HouseListView {
+    margin-top: 60px;
+}
