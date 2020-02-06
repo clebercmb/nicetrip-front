@@ -14,6 +14,8 @@ import HouseListView from "./view/HouseListView"
 //import { Footer } from "./component/footer";
 //import NavBar from "./component/navbar/Navbar";
 
+import NavBar from "./components/NavBar/NavBar"
+
 /* Components:
 - Header (Oliver)
 - Navbar
@@ -48,7 +50,7 @@ export const Layout = () => {
 		<div className="d-flex flex-column h-100">
 			<BrowserRouter>
 				<ScrollToTop>
-
+					<NavBar/>
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route path="/demo" component={Demo} />
