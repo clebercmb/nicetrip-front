@@ -9,45 +9,26 @@ function Map () {
             defaultCenter={{lat:45.421532, lng:-75.697189}}
         />
 
-         
     )
 
 }
-
-/*
-const WrappedMap = withScriptjs (withGoogleMap (Map)) 
-
-const MapContainer = props => {
-    return (
-        <div style={{width:'100vw', height:'100vh'}}>
-            <WrappedMap
-                googleMapURL = {"https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"}
-                loadingElement = {<div style={{ height: "100%" }} />}
-                containergElement = {<div style={{ height: "100%" }} />}
-                mapElement = {<div style={{ height: "100%" }} />}
-
-            />
-        </div>
-    )
-}
-
-export default MapContainer
-*/
-
 
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 
-export default function MapContainer() {
-    console.log("**********")
+export default function MapContainer(props) {
+
     console.log(process.env.REACT_APP_GOOGLE_KEY)
     return (
-        <div style={{ width: "100vw", height: "100vh" }}>
-        <MapWrapped
-            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
-            loadingElement={<div style={{ height: `100%` }} />}
-            containerElement={<div style={{ height: `100%` }} />}
-            mapElement={<div style={{ height: `100%` }} />}
-        />
+        <div style={props.styles}>
+            <MapWrapped
+                googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
+                loadingElement={<div style={{ height: `100%` }} />}
+                containerElement={<div style={{ height: `100%` }} />}
+                mapElement={<div style={{ height: `100%` }} />}
+            />
         </div>
     );
 }
+
+//<div style={{ width: "400px", height: "400px", position: "fi" }}>
+  

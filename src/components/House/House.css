@@ -1,4 +1,9 @@
 .House {
-    max-width: 540px;
-    max-height: 240px;
+    width: 600px;
+    height: 240px;
+}
+
+.House-img {
+    width: 540px;
+    height: 235px;
 }
