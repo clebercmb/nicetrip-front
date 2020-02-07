@@ -13,7 +13,7 @@ const House = props => {
 
                 <div className="col-md-8">
                     <div className="card-body ">
-                        <h6 className="card-title"><small className="text-muted">{props.type}</small></h6>
+                        <small className="text-muted">{props.type}</small>
                         <p className="card-text ">{props.title}</p>
                         <p className="card-text"><small className="text-muted">{props.description1}</small></p>
                         <p className="card-text"><small className="text-muted">{props.description2}</small></p>
