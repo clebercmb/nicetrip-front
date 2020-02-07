@@ -13,11 +13,25 @@ function Map () {
 
 }
 
-const MapWrapped = withScriptjs(withGoogleMap(Map));
+
+const MapWrapped = withScriptjs(withGoogleMap((props) =>
+
+  <GoogleMap
+    defaultZoom={props.zoom}
+    defaultCenter={props.location}
+  />
+ 
+))
+
+//{props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
+
+//const MapWrapped = withScriptjs(withGoogleMap(Map(props)));
 
 export default function MapContainer(props) {
-
+    console.log("MapContainer")
     console.log(process.env.REACT_APP_GOOGLE_KEY)
+    console.log(props.location)
+
     return (
         <div style={props.styles}>
             <MapWrapped
@@ -25,6 +39,8 @@ export default function MapContainer(props) {
                 loadingElement={<div style={{ height: `100%` }} />}
                 containerElement={<div style={{ height: `100%` }} />}
                 mapElement={<div style={{ height: `100%` }} />}
+                location = {props.location}
+                zoom ={props.zoom}
             />
         </div>
     );

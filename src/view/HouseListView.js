@@ -55,7 +55,9 @@ const HouseListView = props => {
                 </div>
                 <div className="col-5 HouseListView-Map" >
                     <MapContainer
-                        styles= {{width:"400px", height: "400px", position: "fixed"}}
+                        styles = {{width:"400px", height: "400px", position: "fixed"}}
+                        location = {{lat:40.712776, lng:-74.005974}}
+                        zoom = {11}
                     />
                 </div>
             </div>
