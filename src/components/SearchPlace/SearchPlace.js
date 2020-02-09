@@ -1,70 +1,65 @@
-import React, { useState } from 'react';
-import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
-import { geocodeByAddress, getLatLng } from 'react-google-places-autocomplete';
+import React, { useState, useContext } from "react";
+import PlacesAutocomplete, { geocodeByAddress, getLatLng } from "react-places-autocomplete";
 
 import { Context } from "../../store/appContext";
+import Script from 'react-load-script';
 
-// If you want to use the provided css
-import 'react-google-places-autocomplete/dist/assets/index.css';
+export default function SearhPlace() {
+    const [address, setAddress] = React.useState("");
+    const [coordinates, setCoordinates] = React.useState({
+        lat: null,
+        lng: null
+    });
 
-const SearchPlace = () => {
+    const { store, actions } = useContext(Context);
 
-    const [address, setState] = useState("");
-    const [result, setResult] = useState(null);
+    const handleSelect = async value => {
+        const results = await geocodeByAddress(value);
+        const latLng = await getLatLng(results[0]);
+        setAddress(value);
+        setCoordinates(latLng);
 
-   
+        actions.setLatLng(latLng)
 
-    const handleSelect = () => {
-        console.log("handleSelect")
-        console.log(address);
-        geocodeByAddress(address)
-            .then(results => setResult(results))
-            .catch(error => console.error(error));
-    }
+    };
 
     return (
         <div>
-            <GooglePlacesAutocomplete
-                onSelect={({ description }) => {
-                    setState(description)
-                    console.log(description)
-                }}
-            />
-            {address}
-            <button onClick={() => handleSelect()}>Buscar</button>
-            {JSON.stringify(result)}
-            {address}
-            {
-                !!result && (
-                    <p>
-                    { JSON.stringify(JSON.parse(JSON.stringify(result[0].geometry["location"])).lat)}
-                    { JSON.stringify(JSON.parse(JSON.stringify(result[0].geometry["location"])).lng)}
-                    
-                    </p>
-                )
-            }
 
+            <PlacesAutocomplete
+                value={address}
+                onChange={setAddress}
+                onSelect={handleSelect}
+            >
+                {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
+                    <div>
+                       
+                        <input {...getInputProps({ placeholder: "Type address" })} />
 
+                        <div>
+                            {loading ? <div>...loading</div> : null}
+
+                            {suggestions.map(suggestion => {
+                                const style = {
+                                    backgroundColor: suggestion.active ? "#41b6e6" : "#fff"
+                                };
+
+                                return (
+                                    <div {...getSuggestionItemProps(suggestion, { style })}>
+                                        {suggestion.description}
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                )}
+            </PlacesAutocomplete>
         </div>
     );
 }
 
-export default SearchPlace
-
 /*
-return (
-    <div>
-        <GooglePlacesAutocomplete
-        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
-        value = {address}
 
-        onSelect={handleSelect}
-        >
-        </GooglePlacesAutocomplete>
-
-    </div>
-
-);
+ <p>Latitude: {coordinates.lat}</p>
+                        <p>Longitude: {coordinates.lng}</p>
 */
-
-

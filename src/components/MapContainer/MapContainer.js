@@ -1,27 +1,20 @@
-import React, {useContext} from "react"
-import {GoogleMap, withScriptjs, withGoogleMap} from "react-google-maps"
+import React, { useContext } from "react"
+import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps"
 import { Context } from "../../store/appContext";
 
-function Map () {
-    
-    return( 
+
+
+const MapWrapped = withScriptjs(withGoogleMap((props) => {
+
+    console.log("MapWrapped")
+    console.log("props.location", props.location)
+    return (
         <GoogleMap
-            defaultZoom={10}
-            defaultCenter={{lat:45.421532, lng:-75.697189}}
+            defaultZoom={props.zoom}
+            defaultCenter={props.location}
         />
-
     )
-
 }
-
-
-const MapWrapped = withScriptjs(withGoogleMap((props) =>
-
-  <GoogleMap
-    defaultZoom={props.zoom}
-    defaultCenter={props.location}
-  />
- 
 ))
 
 //{props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
@@ -41,12 +34,11 @@ export default function MapContainer(props) {
                 loadingElement={<div style={{ height: `100%` }} />}
                 containerElement={<div style={{ height: `100%` }} />}
                 mapElement={<div style={{ height: `100%` }} />}
-                location = {props.location}
-                zoom ={props.zoom}
+                location={props.location}
+                zoom={props.zoom}
             />
         </div>
     );
 }
 
 //<div style={{ width: "400px", height: "400px", position: "fi" }}>
-  
