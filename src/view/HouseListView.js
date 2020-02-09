@@ -1,9 +1,17 @@
-import React from "react"
+import React, { useState, useContext } from "react"
 import House from "../components/House/House"
 import MapContainer from "../components/MapContainer/MapContainer"
 import "../styles/HouseListView.css"
+import { Context } from "../store/appContext";
 
 const HouseListView = props => { 
+
+
+    const { store, actions } = useContext(Context);
+
+    console.log("HouseListView");
+    console.log(store.location.lat)
+    console.log(store.location.lng)
 
     return (
         <div className="container-fluid HouseListView">
@@ -56,7 +64,7 @@ const HouseListView = props => {
                 <div className="col-5 HouseListView-Map" >
                     <MapContainer
                         styles = {{width:"400px", height: "400px", position: "fixed"}}
-                        location = {{lat:40.712776, lng:-74.005974}}
+                        location = {{lat:store.location.lat, lng:store.location.lng}}
                         zoom = {11}
                     />
                 </div>
@@ -74,3 +82,8 @@ const HouseListView = props => {
 }
 
 export default HouseListView
+
+
+// location = {{lat:40.712776, lng:-74.005974}}
+// location = {{lat:-30.0002315, lng:136.2091547}}
+//location = {store.location}

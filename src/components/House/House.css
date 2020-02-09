@@ -8,3 +8,16 @@
     max-height: 100%;
     object-fit: cover;
 }
+
+.card-body {
+    padding : 0 !important;
+
+}
+
+.House-col {
+    padding: 0 5px !important;
+}
+
+.House * p {
+   margin: 0 !important;
+}
