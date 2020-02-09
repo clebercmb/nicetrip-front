@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import SearchPlace from "../SearchPlace/SearchPlace"
+
 import LocationSearchInput from "../SearchPlace/LocationSearchInput"
+import SearchPlace from "../SearchPlace/SearchPlace"
 
 const NavBar = props => {
 	return (
@@ -11,7 +12,7 @@ const NavBar = props => {
 				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
 			</Link>
 
-			<LocationSearchInput/>
+			<SearchPlace/>
 
 			<div className="ml-auto">
 				<Link to="/demo">

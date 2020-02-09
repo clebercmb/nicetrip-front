@@ -57,13 +57,13 @@ const LocationSearchInput = props => {
                                 ? { backgroundColor: '#fafafa', cursor: 'pointer' }
                                 : { backgroundColor: '#ffffff', cursor: 'pointer' };
                             return (
-                                <div className="dropdown-item"
+                                <div
                                     {...getSuggestionItemProps(suggestion, {
                                         className,
                                         style,
                                     })}
                                 >
-                                    <span>{suggestion.description}</span>
+                                    <span>***{suggestion.description}</span>
                                 </div>
                             );
                         })}
