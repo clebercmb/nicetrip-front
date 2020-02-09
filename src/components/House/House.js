@@ -6,12 +6,12 @@ const House = props => {
 
     return (
         <div className="card mb-3 border-left-0  border-right-0 rounded-0  House">
-            <div className="row no-gutters">
-                <div className="col-md-4">
+            <div className="row ">
+                <div className="col-md-4 House-col">
                     <img src={props.img} className="card-img House-img" alt="..."/>
                 </div>
 
-                <div className="col-md-8">
+                <div className="col-md-8 House-col">
                     <div className="card-body ">
                         <small className="text-muted">{props.type}</small>
                         <p className="card-text ">{props.title}</p>

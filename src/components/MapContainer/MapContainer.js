@@ -1,8 +1,9 @@
-import React from "react"
+import React, {useContext} from "react"
 import {GoogleMap, withScriptjs, withGoogleMap} from "react-google-maps"
-
+import { Context } from "../../store/appContext";
 
 function Map () {
+    
     return( 
         <GoogleMap
             defaultZoom={10}
@@ -31,6 +32,7 @@ export default function MapContainer(props) {
     console.log("MapContainer")
     console.log(process.env.REACT_APP_GOOGLE_KEY)
     console.log(props.location)
+
 
     return (
         <div style={props.styles}>

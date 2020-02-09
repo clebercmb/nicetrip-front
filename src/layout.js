@@ -8,7 +8,7 @@ import { Demo } from "./view/Demo";
 import { Single } from "./view/Single";
 import HouseListView from "./view/HouseListView"
 
-//import injectContext from "./store/appContext";
+import injectContext from "./store/appContext";
 
 //import Header from "./component/Header/Header";
 //import { Footer } from "./component/footer";
@@ -67,9 +67,9 @@ export const Layout = () => {
 	);
 };
 
-export default Layout;
+//export default Layout;
 
-//export default injectContext(Layout);
+export default injectContext(Layout);
 
 /*
 
