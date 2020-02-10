@@ -65,7 +65,7 @@ const HouseListView = props => {
                     <MapContainer
                         styles = {{width:"400px", height: "400px", position: "fixed"}}
                         location = {{lat:store.location.lat, lng:store.location.lng}}
-                        zoom = {11}
+                        zoom = {13}
                     />
                 </div>
             </div>
@@ -83,7 +83,7 @@ const HouseListView = props => {
 
 export default HouseListView
 
-
+//location = {{lat:store.location.lat, lng:store.location.lng}}
 // location = {{lat:40.712776, lng:-74.005974}}
 // location = {{lat:-30.0002315, lng:136.2091547}}
 //location = {store.location}

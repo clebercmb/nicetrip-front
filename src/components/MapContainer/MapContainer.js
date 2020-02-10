@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps"
+import { GoogleMap, withScriptjs, withGoogleMap,  Marker } from "react-google-maps"
 import { Context } from "../../store/appContext";
 
 
@@ -7,12 +7,17 @@ import { Context } from "../../store/appContext";
 const MapWrapped = withScriptjs(withGoogleMap((props) => {
 
     console.log("MapWrapped")
-    console.log("props.location", props.location)
+    console.log("props.location", typeof props.location.lat)
     return (
         <GoogleMap
             defaultZoom={props.zoom}
             defaultCenter={props.location}
-        />
+            center={props.location}
+        >
+            <Marker
+                position={ props.location }
+            />
+        </GoogleMap>
     )
 }
 ))
