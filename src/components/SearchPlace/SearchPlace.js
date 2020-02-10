@@ -2,9 +2,10 @@ import React, { useState, useContext } from "react";
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from "react-places-autocomplete";
 
 import { Context } from "../../store/appContext";
-import Script from 'react-load-script';
 
-export default function SearhPlace() {
+import "./SearchPlace.css"
+
+export default function SearchPlace() {
     const [address, setAddress] = React.useState("");
     const [coordinates, setCoordinates] = React.useState({
         lat: null,
@@ -24,7 +25,7 @@ export default function SearhPlace() {
     };
 
     return (
-        <div>
+        <div className="SearhPlace">
 
             <PlacesAutocomplete
                 value={address}

@@ -1,8 +1,3 @@
-.textInput {
-
-    height: 40;
-    width: 300;
-    border-width: 1;
-    border-radius: 30;
-    padding-left: 10px;
+.SearhPlace {
+    position: relative;
 }
