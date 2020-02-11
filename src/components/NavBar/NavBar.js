@@ -12,7 +12,7 @@ const NavBar = props => {
 		<nav className="navbar fixed-top navbar-light bg-light mb-3 NavBar">
 
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1">Nice Trip</span>
+				<span className="navbar-brand mb-0 h1">Nice-Trip</span>
 			</Link>
 			<div className="SearchPlaceP">
 				<SearchPlace />
