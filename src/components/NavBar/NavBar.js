@@ -5,20 +5,24 @@ import { Link } from "react-router-dom";
 import LocationSearchInput from "../SearchPlace/LocationSearchInput"
 import SearchPlace from "../SearchPlace/SearchPlace"
 
+import "./NavBar.css"
+
 const NavBar = props => {
 	return (
-		<nav className="navbar fixed-top navbar-light bg-light mb-3">
+		<nav className="navbar fixed-top navbar-light bg-light mb-3 NavBar">
+
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1">React Boilerplate</span>
+				<span className="navbar-brand mb-0 h1">Nice Trip</span>
 			</Link>
-
-			<SearchPlace/>
-
-			<div className="ml-auto">
+			<div className="SearchPlaceP">
+				<SearchPlace />
+			</div>
+			{/* <div className="ml-auto">
 				<Link to="/demo">
 					<button className="btn btn-primary">Check the Context in action</button>
 				</Link>
-			</div>
+			</div> */}
+			
 		</nav>
 	);
 };
