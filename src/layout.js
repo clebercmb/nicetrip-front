@@ -6,13 +6,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./view/Home";
 import { Demo } from "./view/Demo";
 import { Single } from "./view/Single";
+<<<<<<< HEAD
 import Login from "./view/Login";
+||||||| merged common ancestors
+=======
+import HouseListView from "./view/HouseListView"
+>>>>>>> 2beca6050e3368a85a4dc732071685fb9aadcf46
 
-//import injectContext from "./store/appContext";
+import injectContext from "./store/appContext";
 
 //import Header from "./component/Header/Header";
 //import { Footer } from "./component/footer";
 //import NavBar from "./component/navbar/Navbar";
+
+import NavBar from "./components/NavBar/NavBar"
 
 /* Components:
 - Header (Oliver)
@@ -41,19 +48,26 @@ import Login from "./view/Login";
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
 	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
 	const basename = process.env.BASENAME || "";
+	console.log("%%%%%%")
+	console.log(basename)
 
 	return (
 		<div className="d-flex flex-column h-100">
 			<BrowserRouter>
 				<ScrollToTop>
-
+					<NavBar/>
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route path="/demo" component={Demo} />
 						<Route path="/single/:theid" component={Single} />
 						<Route path="/resources/:theid" component={Single} />
 						<Route path="/resources" component={Single} />
+<<<<<<< HEAD
 						<Route path="/registro" component={Login} />
+||||||| merged common ancestors
+=======
+						<Route path="/house" component={HouseListView} />
+>>>>>>> 2beca6050e3368a85a4dc732071685fb9aadcf46
 						<Route render={() => <h1>Not found!</h1>} />
 						
 					</Switch>
@@ -64,9 +78,9 @@ import Login from "./view/Login";
 	);
 };
 
-export default Layout;
+//export default Layout;
 
-//export default injectContext(Layout);
+export default injectContext(Layout);
 
 /*
 
