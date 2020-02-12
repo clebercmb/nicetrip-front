@@ -35,7 +35,7 @@ export default function SearchPlace() {
                 {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
                     <div>
                        
-                        <input {...getInputProps({ placeholder: "Type address" })} />
+                        <input  className="form-control" {...getInputProps({ placeholder: "Type address" })} />
 
                         <div>
                             {loading ? <div>...loading</div> : null}

@@ -6,14 +6,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./view/Home";
 import { Demo } from "./view/Demo";
 import { Single } from "./view/Single";
-<<<<<<< HEAD
 import Login from "./view/Login";
-||||||| merged common ancestors
-=======
 import HouseListView from "./view/HouseListView"
->>>>>>> 2beca6050e3368a85a4dc732071685fb9aadcf46
+import Listing from "./components/Listing/Listing"
 
 import injectContext from "./store/appContext";
+
 
 //import Header from "./component/Header/Header";
 //import { Footer } from "./component/footer";
@@ -62,12 +60,9 @@ import NavBar from "./components/NavBar/NavBar"
 						<Route path="/single/:theid" component={Single} />
 						<Route path="/resources/:theid" component={Single} />
 						<Route path="/resources" component={Single} />
-<<<<<<< HEAD
 						<Route path="/registro" component={Login} />
-||||||| merged common ancestors
-=======
+						<Route path="/listing" component={Listing} />
 						<Route path="/house" component={HouseListView} />
->>>>>>> 2beca6050e3368a85a4dc732071685fb9aadcf46
 						<Route render={() => <h1>Not found!</h1>} />
 						
 					</Switch>
