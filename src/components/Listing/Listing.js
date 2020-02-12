@@ -29,7 +29,8 @@ const Listing = props => {
     }
 
     function handleSubmit(e) {
-        console.log(">>>>handleSubmit")
+        console.log("****>handleSubmit")
+        
         e.preventDefault();
         const data = new FormData();
         data.append("country", country);
