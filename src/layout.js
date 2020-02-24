@@ -8,7 +8,7 @@ import { Demo } from "./view/Demo";
 import { Single } from "./view/Single";
 import Login from "./view/Login";
 import HouseListView from "./view/HouseListView"
-import Listing from "./components/Listing/Listing"
+import HouseAdView from "./view/HouseAdView"
 
 import injectContext from "./store/appContext";
 
@@ -61,7 +61,7 @@ import NavBar from "./components/NavBar/NavBar"
 						<Route path="/resources/:theid" component={Single} />
 						<Route path="/resources" component={Single} />
 						<Route path="/registro" component={Login} />
-						<Route path="/listing" component={Listing} />
+						<Route path="/housead" component={HouseAdView} />
 						<Route path="/house" component={HouseListView} />
 						<Route render={() => <h1>Not found!</h1>} />
 						
