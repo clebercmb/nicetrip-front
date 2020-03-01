@@ -9,6 +9,7 @@ import { Single } from "./view/Single";
 import Login from "./view/Login";
 import HouseListView from "./view/HouseListView"
 import HouseAdView from "./view/HouseAdView"
+import HouseAdCRUDView from "./view/HouseAdCRUDView"
 
 import injectContext from "./store/appContext";
 
@@ -63,6 +64,7 @@ import NavBar from "./components/NavBar/NavBar"
 						<Route path="/registro" component={Login} />
 						<Route path="/housead" component={HouseAdView} />
 						<Route path="/house" component={HouseListView} />
+						<Route path="/houseadcrud" component={HouseAdCRUDView} />
 						<Route render={() => <h1>Not found!</h1>} />
 						
 					</Switch>

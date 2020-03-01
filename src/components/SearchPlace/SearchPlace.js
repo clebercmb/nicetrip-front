@@ -18,9 +18,12 @@ export default function SearchPlace() {
         const results = await geocodeByAddress(value);
         const latLng = await getLatLng(results[0]);
         setAddress(value);
+
+        console.log("value===", value)
         setCoordinates(latLng);
 
         actions.setLatLng(latLng)
+        actions.setAddress(value)
 
     };
 

@@ -34,6 +34,7 @@
     "sass-loader": "^8.0.2",
     "typescript": "^3.7.5"
   },
+
   "scripts": {
     "start": "env-cmd -f .env.development react-scripts start",
     "build": "env-cmd -f .env.production react-scripts build",

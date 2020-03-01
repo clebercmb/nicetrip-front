@@ -17,6 +17,7 @@ const HouseAdView = props => {
     console.log(store.location.lng)
 
 
+    const [id, setId] = useState(null);
     const [country, setCountry] = useState('A');
     const [address, setAddress] = useState('');
     const [complement, setComplement] = useState('');
@@ -25,6 +26,7 @@ const HouseAdView = props => {
     const [zipCode, setZipCode] = useState('');
     const [countries, setCountries] = useState(["Choose Country"])
     const [selectedOption, setSelectedOption] = useState("")
+    const [name, setName] = useState("")
 
 
     /*const [sexo, setSexo] = useState('M');
@@ -54,7 +56,7 @@ const HouseAdView = props => {
             let countries = [{id:"Choose Country", name:"Choose Country"}, ...data.map(item => ({id:item.name, name:item.name}))]
             
             setCountries(countries)
-            setCountry("Algeria")
+            //setCountry("Algeria")
             console.log("===>selectedOption", selectedOption)
             console.log(countries)
         })
@@ -73,24 +75,40 @@ const HouseAdView = props => {
     }
 
     function handleSubmit(e) {
-        console.log("****>handleSubmit")
+        console.log("****>HouseAdView.handleSubmit!")
         
         e.preventDefault();
-        const data = new FormData();
-        data.append("country", country);
-        data.append("address", address);
-        data.append("complement", complement);
-        data.append("city", city);
-        data.append("state", state);
-        data.append("zipCode", zipCode);
+        //const data = new FormData();
+        let data = {}
+        data["name"] = name
+        data["address"] =  store.address
+        data["city"] = city
+        data["complement"] = complement
+        data["country"] = country
+        data["latitude"] = store.location.lat
+        data["longitude"] = store.location.lng
+        data["state"] = state
+        data["zipcode"] = zipCode
 
         console.log(data)
+        console.log("@@@@@")
 
-        /*fetch(url, {
-            method: 'POST', // 'PUT'
-            body: data
-        }).then().then().catch()*/
+        console.log(process.env.REACT_APP_GOOGLE_KEY)
+        console.log(process.env.REACT_APP_URL_HOUSE_AD)
+        console.log("process.env.URL_HOUSE_AD", process.env.REACT_APP_URL_HOUSE_AD)
 
+        let urlHouseAd = process.env.REACT_APP_URL_HOUSE_AD
+        if (id === null) {
+            fetch(urlHouseAd +'/houseads', {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: {
+                  "Content-Type": "application/json"
+                }
+            })
+            .then(resp => resp.json())
+            .then(data => console.log(data));
+        }
     }
 
     return (
@@ -102,7 +120,16 @@ const HouseAdView = props => {
             </div>
             <div className="row justify-content-center">
                 <div className="col-md-6 mx-auto">
-                    <form  onSubmit={e => handleSubmit(e)} style={style}>
+                    <form style={style}>
+
+
+                        <div className="form-group">
+                            <label htmlFor="identification" className="form-label">Name your place:</label>
+                            <input type="text" name="name" id="name"
+                                className="form-control"
+                                onChange={(e) => handleChange(e, setName)}
+                            />
+                        </div>
 
                         <div className="form-group">
                             <label htmlFor="" className="form-label">Country:</label>
@@ -149,20 +176,16 @@ const HouseAdView = props => {
                                 onChange={(e) => handleChange(e, setZipCode)}
                             />
                         </div>
+                        <div className="form-group">
+                            <button className="btn btn-primary btn-block" onClick={e => handleSubmit(e)}>Save</button>
 
+                        </div>
                     </form>
 
 
                 </div>
                 
             </div>
-
-            <div className="row">
-            <div className="col-md-6 mx-auto">
-                    <button className="btn btn-primary btn-block" onClick={e => handleSubmit(e)}>Send</button>
-            </div>
-            </div>
-
         </div>
     )
 }
