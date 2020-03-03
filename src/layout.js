@@ -62,7 +62,9 @@ import NavBar from "./components/NavBar/NavBar"
 						<Route path="/resources/:theid" component={Single} />
 						<Route path="/resources" component={Single} />
 						<Route path="/registro" component={Login} />
+						<Route path="/housead/:theid" component={HouseAdView} />
 						<Route path="/housead" component={HouseAdView} />
+
 						<Route path="/house" component={HouseListView} />
 						<Route path="/houseadcrud" component={HouseAdCRUDView} />
 						<Route render={() => <h1>Not found!</h1>} />
