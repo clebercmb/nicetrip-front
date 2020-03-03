@@ -29,10 +29,12 @@
     "react-places-autocomplete": "^7.2.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
+    "react-select": "^3.0.8",
     "sass": "^1.25.0",
     "sass-loader": "^8.0.2",
     "typescript": "^3.7.5"
   },
+
   "scripts": {
     "start": "env-cmd -f .env.development react-scripts start",
     "build": "env-cmd -f .env.production react-scripts build",

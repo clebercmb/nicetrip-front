@@ -6,9 +6,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./view/Home";
 import { Demo } from "./view/Demo";
 import { Single } from "./view/Single";
+import Login from "./view/Login";
 import HouseListView from "./view/HouseListView"
+import HouseAdView from "./view/HouseAdView"
+import HouseAdCRUDView from "./view/HouseAdCRUDView"
 
 import injectContext from "./store/appContext";
+
 
 //import Header from "./component/Header/Header";
 //import { Footer } from "./component/footer";
@@ -39,7 +43,7 @@ import NavBar from "./components/NavBar/NavBar"
 */
 
 //create your first component
-export const Layout = () => {
+ const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
 	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
 	const basename = process.env.BASENAME || "";
@@ -57,8 +61,14 @@ export const Layout = () => {
 						<Route path="/single/:theid" component={Single} />
 						<Route path="/resources/:theid" component={Single} />
 						<Route path="/resources" component={Single} />
+						<Route path="/registro" component={Login} />
+						<Route path="/housead/:theid" component={HouseAdView} />
+						<Route path="/housead" component={HouseAdView} />
+
 						<Route path="/house" component={HouseListView} />
+						<Route path="/houseadcrud" component={HouseAdCRUDView} />
 						<Route render={() => <h1>Not found!</h1>} />
+						
 					</Switch>
 
 				</ScrollToTop>

@@ -9,7 +9,7 @@ import "./NavBar.css"
 
 const NavBar = props => {
 	return (
-		<nav className="navbar fixed-top navbar-light bg-light mb-3 NavBar">
+		<nav className="navbar sticky-top navbar-light bg-light mb-0 NavBarStyle">
 
 			<Link to="/">
 				<span className="navbar-brand mb-0 h1">Nice-Trip</span>

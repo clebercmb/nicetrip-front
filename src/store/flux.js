@@ -17,7 +17,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			vehicles: [],
 			planets: [],
 			resource: null,
-			location: {lat:0, lng:0}
+			location: {lat:0, lng:0},
+			address: null
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -60,6 +61,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const store = getStore();
 
 				if (store.resource != null) setStore({ resource: null });
+			},
+
+			setAddress: (address) => {
+
+				const store = getStore();
+
+				setStore({ address: address });
 			},
 
 			setLatLng: (latLng) => {
