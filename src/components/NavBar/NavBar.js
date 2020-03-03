@@ -17,6 +17,10 @@ const NavBar = props => {
 			<div className="SearchPlaceP">
 				<SearchPlace />
 			</div>
+
+			<Link className="justify-content-right" to={'/houseadcrud'}>
+				Listing
+			</Link>
 			{/* <div className="ml-auto">
 				<Link to="/demo">
 					<button className="btn btn-primary">Check the Context in action</button>
