@@ -17,7 +17,6 @@ const HouseAdCRUDView = props => {
     console.log(store.location.lng)
 
 
-    
     const [isChecked, setIsChecked] = useState(true)
 
 
@@ -66,8 +65,6 @@ const HouseAdCRUDView = props => {
             //console.log("===>selectedOption", selectedOption)
             //console.log(houseAdList)
 
-
-
             let houseAdList = data.map( (data, i) => 
                 <div className="form-group" key={i}>
                     <input type="radio" id={"d"+data.id} name="house" value={data.id} onClick={(e) => handleChange(e, setId)}/>
@@ -82,8 +79,6 @@ const HouseAdCRUDView = props => {
             //error handling
             console.log(error);
         })
-
-
     }
 
     function handleChange(e, func) {
@@ -196,7 +191,7 @@ const HouseAdCRUDView = props => {
 
                     <form style={style}>
                         <div className="form-group">
-                            <input type="radio"  id="d0" name="house" value="0" checked={id == "0"}  onClick={(e) => handleChange(e, setId)}/>
+                            <input type="radio"  id="d0" name="house" value="0" checked={id == "0"} onChange={() => ""}  onClick={(e) => handleChange(e, setId)}/>
                             <label htmlFor="male">&emsp;Create a new listing</label>
                         </div>
 

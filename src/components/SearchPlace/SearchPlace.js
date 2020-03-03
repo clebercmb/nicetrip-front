@@ -1,16 +1,20 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from "react-places-autocomplete";
 
 import { Context } from "../../store/appContext";
 
 import "./SearchPlace.css"
 
-export default function SearchPlace() {
-    const [address, setAddress] = React.useState("");
+export default function SearchPlace(props) {
+
+    console.log("***SearchPlace.props.address=", props.address)
+    const [address, setAddress] = React.useState(props.address ? props.address : "" );
     const [coordinates, setCoordinates] = React.useState({
         lat: null,
         lng: null
     });
+
+
 
     const { store, actions } = useContext(Context);
 
