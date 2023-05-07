@@ -14,7 +14,7 @@
     "fibers": "^4.0.2",
     "google-map-react": "^1.1.6",
     "google-maps-react": "^2.0.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "material-ui-search-bar": "^0.4.2",
     "node-sass": "^4.13.1",
     "popper": "^1.0.1",
